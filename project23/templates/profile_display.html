@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+    <title>profile</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+
+        <h3>Display <u> {{uo.username}}</u> Details</h3>
+       
+        <div class="card" style="width: 18rem;">
+            <h2><img src="{{po.pic.url}}" alt="no image" height="250px" width="286px" > </h2>
+            
+            
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">username :- <b> {{uo.username}}</b></li>
+              <li class="list-group-item">Email :-  <b>{{uo.email}}</b></li>
+              <li class="list-group-item">Address :-  <b>{{po.add}}</b></li>
+            </ul>
+            <div class="card-body">
+              <a href="{% url 'home' %}" class="btn btn-primary card-link">home</a>
+              <a href="{% url 'user_logout' %}" class="btn btn-danger card-link">logout</a>
+            </div>
+        </div>
+    </center>
+{% endblock %}
