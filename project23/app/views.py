@@ -57,7 +57,7 @@ def user_login(request):
     if request.method=='POST':
         username=request.POST['un']
         password=request.POST['pw']
-        AUO=authenticate(username=username,password=password)
+        AUO=authenticate(request, username=username,password=password)
 
         if AUO and AUO.is_active:
             login(request,AUO)
